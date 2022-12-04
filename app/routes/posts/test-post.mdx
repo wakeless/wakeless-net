@@ -2,12 +2,12 @@
 meta:
   title: My First Post
   description: Isn't this just awesome?
+  date: "2022-12-04"
 ---
 
 export const handle = {
-  its: "all yours",
+  title: attributes.meta.title,
+  date: attributes.meta.date
 };
-
-# {attributes.meta.title}
 
 You can reference your frontmatter data through "attributes". The title of this post is {attributes.meta.title}!

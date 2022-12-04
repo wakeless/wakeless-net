@@ -1,5 +1,9 @@
 import { json } from "@remix-run/node"; // or cloudflare/deno
 import { Link, useLoaderData } from "@remix-run/react";
+// import {Container} from "app/components/Container";
+import {SimpleLayout} from "app/components/SimpleLayout";
+import { formatDate } from 'app/lib/formatDate'
+import { Card } from 'app/components/Card'
 
 // Import all your posts from the app/routes/posts directory. Since these are
 // regular route modules, they will all be available for individual viewing
@@ -25,19 +29,46 @@ export default function Index() {
   const posts = useLoaderData();
 
   return (
-      <div className='flex justify-center'>
-        <div className='prose lg:prose-xl py-10'>
-          <h2>Michael Gall's blog </h2>
-
-        <ul>
+    <SimpleLayout
+      title="Michael Gall's blog"
+      intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+    >
+      <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+        <div className="flex max-w-3xl flex-col space-y-16">
           {posts.map((post: any) => (
-            <li key={post.slug}>
-              <Link to={`/posts/${post.slug}`}>{post.title}</Link>
-              {post.description ? <p>{post.description}</p> : null}
-            </li>
+            <Article key={post.slug} article={post} />
           ))}
-        </ul>
+        </div>
       </div>
-    </div>
+    </SimpleLayout>
   );
+}
+
+function Article({ article }) {
+  return (
+    <article className="md:grid md:grid-cols-4 md:items-baseline">
+      <Card className="md:col-span-3">
+        <Card.Title href={`/posts/${article.slug}`}>
+          {article.title}
+        </Card.Title>
+        <Card.Eyebrow
+          as="time"
+          dateTime={article.date}
+          className="md:hidden"
+          decorate
+        >
+          {formatDate(article.date)}
+        </Card.Eyebrow>
+        <Card.Description>{article.description}</Card.Description>
+        <Card.Cta>Read article</Card.Cta>
+      </Card>
+      <Card.Eyebrow
+        as="time"
+        dateTime={article.date}
+        className="mt-1 hidden md:block"
+      >
+        {formatDate(article.date)}
+      </Card.Eyebrow>
+    </article>
+  )
 }

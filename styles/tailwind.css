@@ -1,0 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind typography;
+@import './prism.css';
+@tailwind utilities;
