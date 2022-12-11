@@ -7,8 +7,8 @@ describe("smoke tests", () => {
   it("should render a post", () => {
     cy.visitAndCheck("/");
 
-    cy.findByRole("link", { name: /my first post/i }).click();
-    cy.findByRole("heading", { name: /my first post/i }).should('be.visible');
+    cy.findByRole("link", { name: /what do you do/i }).click();
+    cy.findByRole("heading", { name: /what do you do/i }).should('be.visible');
   });
 
 });

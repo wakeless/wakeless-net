@@ -1,5 +1,5 @@
 import { json } from "@remix-run/node"; // or cloudflare/deno
-import { Link, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 // import {Container} from "app/components/Container";
 import {SimpleLayout} from "app/components/SimpleLayout";
 import { formatDate } from 'app/lib/formatDate'
@@ -8,7 +8,7 @@ import { Card } from 'app/components/Card'
 // Import all your posts from the app/routes/posts directory. Since these are
 // regular route modules, they will all be available for individual viewing
 // at /posts/a, for example.
-import * as postA from "./posts/test-post.mdx";
+import * as postA from "./posts/what-do-you-do.mdx";
 
 function postFromModule(mod: any) {
   return {
@@ -44,7 +44,9 @@ export default function Index() {
   );
 }
 
-function Article({ article }) {
+type Post = { date: string; title: string; slug: string; description: string};
+
+function Article({ article }: {article: Post}) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">

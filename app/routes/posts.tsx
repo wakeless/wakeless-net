@@ -1,11 +1,10 @@
-import { Outlet, Link, useLoaderData, useMatches, useNavigate  } from "@remix-run/react";
+import { Outlet, useMatches, useNavigate  } from "@remix-run/react";
 
 import { Container } from 'app/components/Container'
 import { formatDate } from 'app/lib/formatDate'
 import { Prose } from 'app/components/Prose'
-import { useMatchesData } from "~/utils";
 
-function ArrowLeftIcon(props) {
+function ArrowLeftIcon(props: any) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
@@ -19,13 +18,13 @@ function ArrowLeftIcon(props) {
 }
 
 export default function Posts({
-  children,
   previousPathname,
   ...props
-}) {
+}: { previousPathname: any, props: any}) {
   const navigate = useNavigate()
   const matches = useMatches();
-  const {date, title} = matches[matches.length-1]?.handle;
+  const handle: {date?: string; title?: string} | undefined = matches[matches.length-1]?.handle;
+  const { date, title } = handle || {};
   return (
     <>
       <Container className="mt-16 lg:mt-32">
