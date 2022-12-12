@@ -1,9 +1,9 @@
 import { json } from "@remix-run/node"; // or cloudflare/deno
 import { useLoaderData } from "@remix-run/react";
 // import {Container} from "app/components/Container";
-import {SimpleLayout} from "app/components/SimpleLayout";
-import { formatDate } from 'app/lib/formatDate'
-import { Card } from 'app/components/Card'
+import { SimpleLayout } from "app/components/SimpleLayout";
+import { formatDate } from "app/lib/formatDate";
+import { Card } from "app/components/Card";
 
 // Import all your posts from the app/routes/posts directory. Since these are
 // regular route modules, they will all be available for individual viewing
@@ -33,7 +33,7 @@ export default function Index() {
       title="Michael Gall's blog"
       intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
     >
-      <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
+      <div className="md:border-zinc-100 md:dark:border-zinc-700/40 md:border-l md:pl-6">
         <div className="flex max-w-3xl flex-col space-y-16">
           {posts.map((post: any) => (
             <Article key={post.slug} article={post} />
@@ -44,15 +44,13 @@ export default function Index() {
   );
 }
 
-type Post = { date: string; title: string; slug: string; description: string};
+type Post = { date: string; title: string; slug: string; description: string };
 
-function Article({ article }: {article: Post}) {
+function Article({ article }: { article: Post }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
-        <Card.Title href={`/posts/${article.slug}`}>
-          {article.title}
-        </Card.Title>
+        <Card.Title href={`/posts/${article.slug}`}>{article.title}</Card.Title>
         <Card.Eyebrow
           as="time"
           dateTime={article.date}
@@ -72,5 +70,5 @@ function Article({ article }: {article: Post}) {
         {formatDate(article.date)}
       </Card.Eyebrow>
     </article>
-  )
+  );
 }
