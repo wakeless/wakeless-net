@@ -105,6 +105,11 @@ module.exports = {
             marginBottom: theme("spacing.7"),
           },
 
+          "div.conversation p": {
+            marginTop: theme("spacing.3"),
+            marginBottom: theme("spacing.3"),
+          },
+
           // Headings
           "h2, h3": {
             backgroundColor: "red",
