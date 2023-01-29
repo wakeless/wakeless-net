@@ -10,6 +10,7 @@ import { Card } from "app/components/Card";
 // at /posts/a, for example.
 import * as post1 from "./posts/what-do-you-do.mdx";
 import * as post2 from "./posts/the-full-stack.mdx";
+import * as post3 from "./posts/pause-for-clarity.mdx";
 
 function postFromModule(mod: any) {
   return {
@@ -23,7 +24,11 @@ export async function loader() {
   // Referencing the posts here instead of in the Index component down below
   // lets us avoid bundling the actual posts themselves in the bundle for the
   // index page.
-  return json([postFromModule(post2), postFromModule(post1)]);
+  return json([
+    postFromModule(post3),
+    postFromModule(post2),
+    postFromModule(post1),
+  ]);
 }
 
 export default function Index() {
