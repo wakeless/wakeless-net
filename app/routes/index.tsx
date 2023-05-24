@@ -11,6 +11,7 @@ import { Card } from "app/components/Card";
 import * as post1 from "./posts/what-do-you-do.mdx";
 import * as post2 from "./posts/the-full-stack.mdx";
 import * as post3 from "./posts/pause-for-clarity.mdx";
+import * as post4 from "./posts/generative-ai-harnessing-average.mdx";
 
 function postFromModule(mod: any) {
   return {
@@ -25,6 +26,7 @@ export async function loader() {
   // lets us avoid bundling the actual posts themselves in the bundle for the
   // index page.
   return json([
+    postFromModule(post4),
     postFromModule(post3),
     postFromModule(post2),
     postFromModule(post1),
