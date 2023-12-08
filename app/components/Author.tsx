@@ -1,4 +1,3 @@
-const logo = require("../../public/logo.png");
 export function Author() {
   const person = {
     imageUrl: "https://ferocia.com.au/images/team/mikeg.jpg",
