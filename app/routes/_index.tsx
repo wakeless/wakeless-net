@@ -8,15 +8,15 @@ import { Card } from "app/components/Card";
 // Import all your posts from the app/routes/posts directory. Since these are
 // regular route modules, they will all be available for individual viewing
 // at /posts/a, for example.
-import * as post1 from "./posts/what-do-you-do.mdx";
-import * as post2 from "./posts/the-full-stack.mdx";
-import * as post3 from "./posts/pause-for-clarity.mdx";
-import * as post4 from "./posts/generative-ai-harnessing-average.mdx";
+import * as post1 from "./posts.what-do-you-do.mdx";
+import * as post2 from "./posts.the-full-stack.mdx";
+import * as post3 from "./posts.pause-for-clarity.mdx";
+import * as post4 from "./posts.generative-ai-harnessing-average.mdx";
 
 function postFromModule(mod: any) {
   return {
-    slug: mod.filename.replace(/\.mdx?$/, ""),
-    ...mod.attributes.meta,
+    slug: mod.filename.replace(/\.mdx?$/, "").replace(/posts\./, ""),
+    ...mod.attributes.handle,
   };
 }
 
@@ -34,7 +34,7 @@ export async function loader() {
 }
 
 export default function Index() {
-  const posts = useLoaderData();
+  const posts = useLoaderData<typeof loader>();
 
   return (
     <SimpleLayout
@@ -55,6 +55,7 @@ export default function Index() {
 type Post = { date: string; title: string; slug: string; description: string };
 
 function Article({ article }: { article: Post }) {
+  console.log(article);
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
