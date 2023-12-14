@@ -13,7 +13,7 @@ import {
 } from "@remix-run/react";
 import * as gtag from "~/utils/gtags.client";
 
-import tailwindStylesheetUrl from "./styles/tailwind.css";
+import tailwindStylesheetUrl from "~/styles/tailwind.css";
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
