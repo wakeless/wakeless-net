@@ -34,7 +34,6 @@ export default function Posts({
     | undefined;
   const { date, title } = handle || {};
 
-  console.log(handle);
   return (
     <InternalLayout>
       <Container className="mt-16 lg:mt-32">

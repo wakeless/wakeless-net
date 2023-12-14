@@ -55,7 +55,6 @@ export default function Index() {
 type Post = { date: string; title: string; slug: string; description: string };
 
 function Article({ article }: { article: Post }) {
-  console.log(article);
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
