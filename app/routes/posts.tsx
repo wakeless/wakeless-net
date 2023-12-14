@@ -28,9 +28,10 @@ export default function Posts({
 }) {
   const navigate = useNavigate();
   const matches = useMatches();
-  console.log(matches);
-  const handle: { date?: string; title?: string } | undefined =
-    matches[matches.length - 1]?.handle;
+
+  const handle = matches[matches.length - 1]?.handle as
+    | { date?: string; title?: string }
+    | undefined;
   const { date, title } = handle || {};
 
   console.log(handle);
