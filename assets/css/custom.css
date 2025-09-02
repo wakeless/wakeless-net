@@ -1,0 +1,32 @@
+---
+---
+
+/* Custom styles for conversation divs */
+.conversation p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.conversation {
+  font-style: italic;
+  background-color: #f8fafc;
+  border-left: 4px solid #14b8a6;
+  padding: 1rem 1.5rem;
+  margin: 1.75rem 0;
+  border-radius: 0.5rem;
+}
+
+.conversation > p:first-child {
+  margin-top: 0;
+}
+
+.conversation > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Float right for images */
+.float-right {
+  float: right;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
