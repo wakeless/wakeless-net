@@ -36,6 +36,9 @@ theme: awesome-jekyll-theme
 plugins:
   - jekyll-feed
 
+# Permalink structure
+permalink: /posts/:title/
+
 # Custom CSS
 custom_css:
   - "/assets/css/custom.css"
