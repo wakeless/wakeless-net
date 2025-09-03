@@ -10,7 +10,6 @@ categories: communication speaking
 
 <div class="conversation">
 > A polar bear walks into a bar and says, "can I have 2 rum and cokes and… uncomfortable pause a pint of beer please?
-
 > Barman says, "why the big paws?"
 
 </div>
