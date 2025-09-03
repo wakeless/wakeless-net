@@ -4,6 +4,7 @@ title: "The Full Stack"
 date: 2023-01-04
 description: "What is the \"full stack\" really?"
 categories: development philosophy
+image: /assets/images/the-full-stack.jpg
 ---
 
 ![The Full Stack](/assets/images/the-full-stack.jpg){: .float-right style="width: 50%"}

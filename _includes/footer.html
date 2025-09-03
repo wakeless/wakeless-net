@@ -1,0 +1,23 @@
+{% capture currentYear %}{{ 'now' | date: '%Y' }}{% endcapture %}
+
+<footer class="w-full bottom-0">
+  <hr class="my-8 border-zinc-200 dark:border-neutral-700" />
+  <div class="container mx-auto">
+    <div class="flex flex-wrap text-left">
+      <div class="w-full md:w-6/12 md:text-right py-4 md:py-0">
+        <div class="flex flex-wrap items-top mb-6">
+          <div class="w-full lg:w-4/12 md:px-4 ml-auto">
+            <ul>
+              {% for page in site.pages %} {% if page.footer %}
+              <li>
+                <a class="font-mulish text-slate-600 hover:text-sky-400 dark:text-neutral-300 dark:hover:text-slate-200"
+                  href="{{ page.url | relative_url }}">{{ page.title | default: page.name }}</a>
+              </li>
+              {% endif%} {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

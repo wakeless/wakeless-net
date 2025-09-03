@@ -4,6 +4,7 @@ title: "Generative AI: Harnessing Average"
 date: 2023-05-24
 description: "How do we live in a world where average is so easy?"
 categories: ai technology creativity
+image: /assets/images/mona-lisa-eyes-generated-creepy.png
 ---
 
 # The Rise of AI: Harnessing Average

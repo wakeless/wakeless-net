@@ -4,6 +4,7 @@ title: "Pause For Clarity"
 date: 2023-01-30
 description: "Simple instruction to yourself: Pause For Clarity helps with delivery"
 categories: communication speaking
+header_image: /assets/images/big-paws.jpg
 ---
 
 ![Big Paws](/assets/images/big-paws.jpg){: .float-right style="width: 50%"}
