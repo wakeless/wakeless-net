@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Lessons from Vibe Coding with Phoenix"
-date: 2025-09-18
+date: 2025-09-17
 description: "A collection of lessons from Vibe Coding in Phoenix"
 categories: ai vibe-coding phoenix elixir
 ---
