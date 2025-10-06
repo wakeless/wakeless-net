@@ -5,6 +5,7 @@ date: 2025-10-05
 description: "Creating an unofficial Model Context Protocol server for Up Banking API"
 categories: mcp ai banking typescript
 image: /assets/images/posts/up-api-logo.png
+hide_post_image: true
 ---
 
 I've spent the majority of the last month since I finished up full-time at Constantinople learning more and more about
